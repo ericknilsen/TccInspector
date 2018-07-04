@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="ui menu">
+  <div class="ui container">
+    <div class="header item borderless">
+    <a [routerLink]="['/rules']" routerLinkActive="active" class="header item">
+      <h3 class="ui header">
+        Regras
+      </h3>
+    </a>
+    </div>
+    <div class="header item borderless">
+      <a [routerLink]="['/upload']" routerLinkActive="active" class="header item">
+        <h2 class="ui header">
+          <img class="logo" src="/assets/images/magnifieddoc.png">
+          Verificador de TCC
+        </h2>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="ui main text container">
+   <router-outlet></router-outlet>
+</div>
+
+<!--
+<abnt-file-upload></abnt-file-upload>
+-->

@@ -1,0 +1,42 @@
+@import './app/vendor/semantic.min.css';
+/*@import '~bootstrap/dist/css/bootstrap.min.css';*/
+
+.ui.menu .item img.logo {
+    margin-right: 0.5em;
+}
+
+form.ui.segment.form {
+  background-color: #F1F9FF;
+  margin-top: 2em;
+}
+
+.error-message {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #DC143C;
+  text-align: justify;
+  margin-top: 2em;
+}
+
+.detail-message {
+  color: #2F4F4F;
+}
+
+form.form:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+a.disabled {
+    color: gray;
+    cursor: not-allowed;
+    text-decoration: underline;
+}
+
+p {
+  font-size: 1.2rem;
+  text-align: justify;
+  font-family: Helvetica, Arial, sans-serif;
+}
