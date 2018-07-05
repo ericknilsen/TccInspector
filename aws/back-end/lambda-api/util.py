@@ -22,8 +22,7 @@ class Util(object):
 
     def getText(self, fileName):
 
-
-        with open('credentials.json') as f:
+        with open('files/credentials.json') as f:
             credentials = json.load(f)
 
         client = boto3.client('s3',
@@ -40,7 +39,6 @@ class Util(object):
      
         paragraphs = re.split('\n',text)
 
-        
         return paragraphs
        
 

@@ -146,7 +146,7 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-aws/back-end/lambda-api/credentials.json
+aws/back-end/lambda-api/files/credentials.json
 
 
 # End of https://www.gitignore.io/api/django,python,angular
