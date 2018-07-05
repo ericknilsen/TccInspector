@@ -4,4 +4,5 @@ export class BucketAccess {
   region: string
   accessKeyId: string
   secretAccessKey: string
+  apiEndPoint: string
 }

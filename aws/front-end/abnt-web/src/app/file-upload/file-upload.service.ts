@@ -11,17 +11,11 @@ import * as S3 from 'aws-sdk/clients/s3';
 
 @Injectable()
 export class FileUploadService {
-
-  apiEndPoint:string = 'http://localhost:8000'
+ 
   bucketAccess:BucketAccess
 
   constructor(private http: HttpClient) {}
-
-  sendFile(formData:FormData): Observable<FormData> {
-
-    return this.http.post<FormData>(`${this.apiEndPoint}/upload/`, formData)
-  }
-
+  
   openLocalCredentialsFile() {
 
     this.http.get<BucketAccess>('assets/files/credentials.json').subscribe(data => {
@@ -29,7 +23,7 @@ export class FileUploadService {
     })
   }
 
-  uploadfile(file) {
+  uploadfile(file: File) {
 
     const bucket = new S3(
       {
@@ -59,7 +53,7 @@ export class FileUploadService {
 
   showErrorMessages(fileName: string): Observable<Message[]> {
 
-    return this.http.get<Message[]>(`${this.apiEndPoint}/messages${fileName}/`)
+    return this.http.get<Message[]>(`${this.bucketAccess.apiEndPoint}?file=${fileName}`)
   }
 
 }

@@ -4,17 +4,14 @@ from verify import Verify
 import json
 
 
-#def lambda_handler(event, context):
-def lambda_handler():
+def lambda_handler(event, context):
 
-    fileName = 'TccTatiane.docx'
+    fileName = event['file']
     messages = Verify(fileName).process()
 
     errorMessages = []
     for value in messages:
-        print value["content"]
         errorMessages.append(value)
 
     return errorMessages
 
-lambda_handler()

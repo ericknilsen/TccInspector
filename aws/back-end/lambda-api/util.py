@@ -30,7 +30,7 @@ class Util(object):
                                 aws_secret_access_key = credentials["secretAccessKey"]
                              )  
                             
-        obj = client.get_object(Bucket = credentials["bucketName"], Key = credentials["folder"]+"TccTatiane.docx")
+        obj = client.get_object(Bucket = credentials["bucketName"], Key = credentials["folder"]+fileName)
 
         body = obj['Body'].read()
         buffer = io.BytesIO()
