@@ -6,6 +6,7 @@ import boto3
 import docx2txt
 import io
 import re
+import json
 
 
 class Singleton(type):
@@ -20,9 +21,16 @@ class Util(object):
     __metaclass__ = Singleton
 
     def getText(self, fileName):
+
+
+        with open('credentials.json') as f:
+            credentials = json.load(f)
+
         client = boto3.client('s3',
-                                aws_access_key_id="YOUR-ACCESS-KEY-ID",
-                                aws_secret_access_key="YOUR-SECRET-ACCESS-KEY")
+                                aws_access_key_id = credentials["accessKeyId"],
+                                aws_secret_access_key = credentials["secretAccessKey"]
+                             )  
+                            
         obj = client.get_object(Bucket='abnt-verify', Key='jsa-s3/TccTatiane.docx')
 
         body = obj['Body'].read()
