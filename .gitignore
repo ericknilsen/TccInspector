@@ -1,5 +1,4 @@
-
-# Created by https://www.gitignore.io/api/django,python,angular
+# Created by https://www.gitignore.io/api/django,python,ionic3,angular
 
 ### Angular ###
 ## Angular ##
@@ -29,9 +28,6 @@ testem.log
 /e2e/*.js
 /e2e/*.map
 
-# credentials
-/src/assets/files/credentials.json
-
 #System Files
 .DS_Store
 
@@ -47,6 +43,38 @@ media
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
 # <django-project-name>/staticfiles/
+
+### Ionic3 ###
+# Log an tmp data
+*~
+*.sw[mnpcod]
+*.tmp
+*.tmp.*
+log.txt
+
+# NPM (Node Package Manager) files
+npm-debug.log*
+node_modules/
+tmp/
+temp/
+
+# Preprocessors cache files
+.sourcemaps/
+.sass-cache/
+.tmp/
+hooks/
+
+# Ionic 3 plugins files
+platforms/
+plugins/
+plugins/android.json
+plugins/ios.json
+www/
+
+# Trash data
+$RECYCLE.BIN/
+Thumbs.db
+UserInterfaceState.xcuserstate
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
@@ -73,6 +101,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -90,14 +119,16 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
-.pytest_cache/
 nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+.pytest_cache/
 
 # Translations
 *.mo
+
+# Django stuff:
 
 # Flask stuff:
 instance/
@@ -119,7 +150,7 @@ target/
 .python-version
 
 # celery beat schedule file
-celerybeat-schedule.*
+celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
@@ -146,7 +177,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-aws/back-end/lambda-api/files/credentials.json
+### Python Patch ###
+.venv/
 
 
-# End of https://www.gitignore.io/api/django,python,angular
+# End of https://www.gitignore.io/api/django,python,ionic3,angular
