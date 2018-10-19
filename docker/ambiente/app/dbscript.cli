@@ -1,0 +1,9 @@
+connect 127.0.0.1
+
+batch
+
+module add --name=org.postgres --resources=/opt/jboss/wildfly/standalone/deployments/postgresql.jar --dependencies=javax.api,javax.transaction.api
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
+data-source add --jndi-name=java:/TreinamentoDS --name=PostgresPool --connection-url=jdbc:postgresql://db:5432/banco --driver-name=postgres --user-name=postgres --password=treinamento
+
+run-batch
