@@ -1,6 +1,6 @@
-## Manual: criando uma aplicação completa
+## Aplicação SPA com Docker
 
-O objetivo deste manual é descrever os passos para a criação de uma aplicação SPA completa utilizando Docker. A aplicação será construída conforme arquitetura da figura abaixo:
+A aplicação foi construída conforme arquitetura da figura abaixo:
 
 ![](https://github.com/ericknilsen/HandsOn/blob/master/docker/ambiente/doc/docker_v1.jpeg)
 
