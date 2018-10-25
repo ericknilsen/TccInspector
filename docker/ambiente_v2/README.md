@@ -8,27 +8,21 @@ A aplicação foi construída conforme arquitetura da figura abaixo:
 
 1) Instale o [Docker](https://docs.docker.com/install)
 
-2) [Baixe o repositório](https://github.com/ericknilsen/HandsOn/tree/master/docker/ambiente) com os arquivos de configuração do Docker
+2) [Baixe o repositório](https://github.com/ericknilsen/HandsOn/tree/master/docker/ambiente_v2) com os arquivos de configuração do Docker
 
-3) Execute o [manual para a criação do ambiente de desenvolvimento](https://github.com/ericknilsen/aulas/wiki/Manual-Ambiente)
- - JDK, JBoss, Eclipse, PgAdmin3
- - Gere o WAR utilizando o JBoss, pelo Eclipse ou linha de comando 
+3) Instale as seguintes ferramentas:
+- [NVM](https://github.com/creationix/nvm#install-script)
+- Node: 
+```shell
+$ sudo nvm install node
+```
 
 4) Configure os containers
 
-- Navegue para dentro do diretório _ambiente_
-- Dentro do arquivo _docker-compose.yml_, atualize o caminho do WildFly: 
-**/home/erick/Tools/wildfly-10.1.0.Final**/standalone/deployments:
-/opt/jboss/wildfly/standalone/deployments/
+- Navegue para dentro do diretório _ambiente_v2_
 - Inicialize os containers:
 ```shell
 $ sudo docker-compose up
-```
-- Configure o datasource
-```shell
-$ wget https://jdbc.postgresql.org/download/postgresql-9.1-903.jdbc4.jar
-$ mv postgresql-9.1-903.jdbc4.jar /home/erick/Tools/wildfly-10.1.0.Final/standalone/deployments/postgresql.jar
-$ sudo docker-compose exec app /opt/jboss/wildfly/bin/jboss-cli.sh --file=dbscript.cli
 ```
 
 5) Acesse o endereço [http://localhost/empregado.html](http://localhost/empregado.html)
@@ -36,7 +30,9 @@ $ sudo docker-compose exec app /opt/jboss/wildfly/bin/jboss-cli.sh --file=dbscri
 
 **Opcional**
 
-6) Use o PgAdmin para se conectar ao banco de dados do container
+)Instale o [Robo 3T](https://robomongo.org/)
+
+6) Use o Robo 3T para se conectar ao banco de dados do container
 - Descubra o ip do container que hospeda o banco de dados:
 ```
 $ sudo docker network ls
