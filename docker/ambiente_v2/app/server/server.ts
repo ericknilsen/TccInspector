@@ -25,7 +25,8 @@ export class Server {
           name: 'empregado-api',
           version: '1.0.0'
         })
-
+        
+        
         const corsOptions: corsMiddleware.Options = {
           preflightMaxAge: 10,
           //origins: ['http://frontend']
@@ -37,11 +38,13 @@ export class Server {
         const cors: corsMiddleware.CorsMiddleware = corsMiddleware(corsOptions)
 
         this.application.pre(cors.preflight)
-
         this.application.use(cors.actual)
+        
+
         this.application.use(restify.plugins.queryParser())
         this.application.use(restify.plugins.bodyParser())
         this.application.use(mergePatchBodyParser)
+
 
         //routes
         for (let router of routers) {

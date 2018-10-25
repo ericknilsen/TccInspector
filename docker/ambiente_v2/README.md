@@ -2,7 +2,7 @@
 
 A aplicação foi construída conforme arquitetura da figura abaixo:
 
-![](https://github.com/ericknilsen/HandsOn/blob/master/docker/ambiente/doc/docker_v1.jpeg)
+![](https://github.com/ericknilsen/HandsOn/blob/master/docker/ambiente_v2/doc/docker_v2.jpeg)
 
 ### Configurações 
 

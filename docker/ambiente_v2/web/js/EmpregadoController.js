@@ -1,11 +1,9 @@
 var app = angular.module('EmpregadoApp', []);
 
 app.controller('EmpregadoController', function($scope, $http) {    
-
-    var API = 'http://localhost:3000/empregados'
-    //var API = 'http://localhost/api/'
-
-
+   
+    var API = 'http://localhost/api'
+    
     $scope.empregado = {};   
     $scope.empregados = [];      
     
