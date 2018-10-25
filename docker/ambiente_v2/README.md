@@ -19,6 +19,19 @@ $ sudo nvm install node
 
 4) Configure os containers
 
+- Navegue para dentro do diretório _ambiente_v2/app_
+- Inicialize a aplicação em Node:
+```shell
+$ sudo npm i
+```
+- Compile a aplicação em Node:
+```shell
+$ sudo tsc -w
+```
+- Em outra aba, execute o nodemon (opcional)
+```shell
+$ sudo nodemon dist/main.js
+```
 - Navegue para dentro do diretório _ambiente_v2_
 - Inicialize os containers:
 ```shell
