@@ -43,7 +43,7 @@ $ sudo docker-compose up
 
 **Opcional**
 
-6)Instale o [Robo 3T](https://robomongo.org/)
+6) Instale o [Robo 3T](https://robomongo.org/)
 
 7) Use o Robo 3T para se conectar ao banco de dados do container
 - Descubra o ip do container que hospeda o banco de dados:
