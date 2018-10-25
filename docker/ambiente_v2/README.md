@@ -30,9 +30,9 @@ $ sudo docker-compose up
 
 **Opcional**
 
-)Instale o [Robo 3T](https://robomongo.org/)
+6)Instale o [Robo 3T](https://robomongo.org/)
 
-6) Use o Robo 3T para se conectar ao banco de dados do container
+7) Use o Robo 3T para se conectar ao banco de dados do container
 - Descubra o ip do container que hospeda o banco de dados:
 ```
 $ sudo docker network ls
@@ -47,4 +47,4 @@ $ sudo docker network inspect ambiente_banco
  "IPv4Address": "172.20.0.2/16",
 ...
 ```
-7) Utilize o endereço IP de saída como valor do host nos dados da conexão
+8) Utilize o endereço IP de saída como valor do host nos dados da conexão
