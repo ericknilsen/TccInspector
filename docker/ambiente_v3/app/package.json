@@ -1,0 +1,23 @@
+{
+  "name": "empregado-api",
+  "version": "1.0.0",
+  "description": "API de Restaurantes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "4.13.9",
+    "restify": "^7.2.1",
+    "restify-cors-middleware": "1.1.0"
+  },
+  "devDependencies": {
+    "@types/mongoose": "4.7.32",
+    "@types/restify": "5.0.6",
+    "@types/restify-cors-middleware": "1.0.1"
+  }
+}
