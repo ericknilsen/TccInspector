@@ -1,28 +1,23 @@
 import axios from 'axios';
 
-export default class EmpregadoService {
+const API = 'http://localhost:3000/empregados'
 
-    API = 'http://localhost:3000/empregados'
-    empregados = []
-    options = []     
-
-    lista() {        
-        axios.get(this.API)
-            .then(response => {               
-                this.empregados = response.data                
-                            
-                 for (let i = 0; i < this.empregados.length; i++) {                       
-                    this.options.push(this.empregados[i].nome)  
-                } 
-
-                
-
-                console.log(this.options)
-               
-            })
-            .catch(error => console.log(error));  
-
-           
-        return this.options;    
-    }
+const lista = () => {
+    return axios.get(API)
 }
+
+const adiciona = (empregado) => {
+    return axios.post(API, empregado)
+}
+
+const remove = (idEmpregado) => {
+    return axios.delete(`${API}/${idEmpregado}`)
+}
+
+const EmpregadoService = {
+    lista,
+    adiciona,
+    remove
+}
+
+export default EmpregadoService
