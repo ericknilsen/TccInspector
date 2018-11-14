@@ -7,45 +7,35 @@ services:
   db:
     image: mongo
     restart: always
-   # environment:
-   #   MONGO_INITDB_ROOT_USERNAME: root
-   #   MONGO_INITDB_ROOT_PASSWORD: example
     networks:
       - banco  
   app:
-    image: "node:10"
-    user: "node"
+    image: node:10
+    user: "root"
     working_dir: /home/node/app
-    environment:
-      - NODE_ENV=production
     volumes:
-      - ./app:/home/node/app      
+      - ./app:/home/node/app
     expose:
       - "3000"
     ports:
       - 3000:3000  
-    command: "npm start"
+    command: bash -c "npm i && npm install -g typescript && tsc && npm start"
     networks:
       - banco
       - web
     depends_on:
       - db    
   frontend:
-    build: ./web
-    user: "node"
-    working_dir: /home/node/app
-    environment:
-      - NODE_ENV=production     
+    image: node:10
+    user: "root"
+    working_dir: /home/node/app     
     volumes:
       - ./web:/home/node/app
-      #- /home/node/app/node_modules
     expose:
       - "8080"
     ports:
       - 8080:8080          
-    #command: "npm i"  
-    command: "yarn run dev-server"    
-    #command: "yarn run serve"
+    command: bash -c "npm i && yarn run dev-server"
     networks:
       - web
     depends_on:
