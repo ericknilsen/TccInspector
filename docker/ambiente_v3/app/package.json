@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/main.js",
+    "start": "concurrently --kill-others \"tsc -w\" \"nodemon dist/main.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "restify-cors-middleware": "1.1.0"
   },
   "devDependencies": {
+    "concurrently": "^2.2.0",
     "@types/mongoose": "4.7.32",
     "@types/node": "^10.12.7"
   }
