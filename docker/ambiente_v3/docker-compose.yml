@@ -19,7 +19,7 @@ services:
       - "3000"
     ports:
       - 3000:3000  
-    command: bash -c "npm i && npm install -g typescript && npm install -g nodemon && npm start"
+    command: bash -c "npm i && npm install -g typescript && tsc && npm install -g nodemon && npm start"
     networks:
       - banco
       - web
